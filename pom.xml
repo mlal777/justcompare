@@ -13,7 +13,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
 
     <appengine.app.version>1</appengine.app.version>
-    <appengine.target.version>1.9.87</appengine.target.version>
+    <appengine.target.version>1.9.71</appengine.target.version>
     <appengine-maven-plugin-version>1.3.2</appengine-maven-plugin-version>
   </properties>
 
@@ -24,18 +24,16 @@
         <artifactId>appengine-api-1.0-sdk</artifactId>
         <version>${appengine.target.version}</version>
     </dependency>
-    <!--
     <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>2.5</version>
-        <scope>provided</scope>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>2.3.1</version>
     </dependency>
     <dependency>
         <groupId>javax.ws.rs</groupId>
         <artifactId>javax.ws.rs-api</artifactId>
-        <version>2.0</version>
-    </dependency> -->
+        <version>2.1</version>
+    </dependency>
     <dependency>
         <groupId>org.glassfish.jersey.containers</groupId>
         <artifactId>jersey-container-servlet</artifactId>
@@ -46,46 +44,17 @@
         <artifactId>jersey-hk2</artifactId>
         <version>2.26</version>
     </dependency>
-<!-- Test Dependencies
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13-beta-2</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
-      <version>1.10.19</version>
-      <scope>test</scope>
-    </dependency>
- <dependency>
-      <groupId>com.google.appengine</groupId>
-      <artifactId>appengine-testing</artifactId>
-      <version>${appengine.target.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.appengine</groupId>
-      <artifactId>appengine-api-stubs</artifactId>
-      <version>${appengine.target.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5.9</version>
-    </dependency> -->
   </dependencies>
+  
     
-  <build>          
+  <build>
+    <outputDirectory>target/${project.artifactId}/WEB-INF/classes</outputDirectory>          
     <plugins>
-    <!--
       <plugin>
         <groupId>com.google.appengine</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
         <version>${appengine.target.version}</version>
-      </plugin> -->
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
